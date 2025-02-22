@@ -228,7 +228,7 @@ const Dashboard = () => {
       {nuPersons && (<h1 className="dashboard-containerh17">{profile.person2} saved <span className='dashboarspan3'>{profile.person2save}/= Rupees</span> in to the budget.</h1>)}
 
       <div className="dashboard-container4">
-        <button className="go-budget-btn2" onClick={() => navigate(`dashboard/prevtransaction`)}>See all Transraction</button>
+        <button className="go-budget-btn2" onClick={() => navigate(`/dashboard/prevtransaction`)}>See all Transraction</button>
         <button className="go-budget-btn2" onClick={() => navigate(`/frontpage`)}>New Budget</button>
       </div>
     </div>
