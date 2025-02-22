@@ -127,7 +127,7 @@ const Dashboard = () => {
         navigate('/login');
         setWaitload(false);
       } else if (response.data==='datasaved') {
-        navigate('dashboard/prevtransaction');
+        navigate('/dashboard/prevtransaction');
         setWaitload(false);
       } else if (response.data==='noitem') {
         alert("No data added, Please reload");
