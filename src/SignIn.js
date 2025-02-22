@@ -21,9 +21,9 @@ const SignIn = () => {
       } else if (msg==="connectionerror"){
         console.log('You are not signed in')
       } else if(msg.activebudget==='yes') {
-        navigate('/tjbudget2025/dashboard');
+        navigate('/dashboard');
       }  else if(msg.activebudget==='no') {
-        navigate('/tjbudget2025/frontpage');
+        navigate('/frontpage');
       }else {
         console.log('You are not signed in')
       }
@@ -125,7 +125,7 @@ const SignIn = () => {
         <button type="submit">Sign Up</button>
         <p className="account-redirect">
           Already have an account?{' '}
-          <button type="button" onClick={() => navigate('/tjbudget2025/login')}>Login</button>
+          <button type="button" onClick={() => navigate('/login')}>Login</button>
         </p>
       </form>
     </div>

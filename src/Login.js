@@ -21,9 +21,9 @@ const Login = () => {
       } else if (msg==="connectionerror"){
         console.log('You are not signed in')
       } else if(msg.activebudget==='yes') {
-        navigate('/tjbudget2025/dashboard');
+        navigate('/dashboard');
       }  else if(msg.activebudget==='no') {
-        navigate('/tjbudget2025/frontpage');
+        navigate('/frontpage');
       }else {
         console.log('You are not signed in')
       }
@@ -58,7 +58,7 @@ const Login = () => {
           setError('Password is not matched');
           setWaitload(false);
         } else if (response.data==='passwordmatched'){
-          navigate('/tjbudget2025/dashboard')
+          navigate('/dashboard')
           setWaitload(false);
         } else {
           setError(`${response.data}`);
@@ -98,7 +98,7 @@ const Login = () => {
         <button type="submit">Login</button>
         <p className="account-redirect">
           Don't have an account?{' '}
-          <button type="button" onClick={() => navigate('/tjbudget2025')}>Sign Up</button>
+          <button type="button" onClick={() => navigate('/')}>Sign Up</button>
         </p>
       </form>
     </div>
