@@ -125,7 +125,7 @@ const SignIn = () => {
         <button type="submit">Sign Up</button>
         <p className="account-redirect">
           Already have an account?{' '}
-          <button type="button" onClick={() => navigate('/login')}>Login</button>
+          <button type="button" onClick={() => navigate('/tjbudget2025/login')}>Login</button>
         </p>
       </form>
     </div>
