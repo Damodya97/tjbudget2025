@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/tjbudget2025/static/css/main.8348f473.css",
-    "main.js": "/tjbudget2025/static/js/main.107c454d.js",
+    "main.js": "/tjbudget2025/static/js/main.a9f47ad4.js",
     "static/js/488.e75445ad.chunk.js": "/tjbudget2025/static/js/488.e75445ad.chunk.js",
     "index.html": "/tjbudget2025/index.html",
     "main.8348f473.css.map": "/tjbudget2025/static/css/main.8348f473.css.map",
-    "main.107c454d.js.map": "/tjbudget2025/static/js/main.107c454d.js.map",
+    "main.a9f47ad4.js.map": "/tjbudget2025/static/js/main.a9f47ad4.js.map",
     "488.e75445ad.chunk.js.map": "/tjbudget2025/static/js/488.e75445ad.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8348f473.css",
-    "static/js/main.107c454d.js"
+    "static/js/main.a9f47ad4.js"
   ]
 }
