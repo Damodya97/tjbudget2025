@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, Link } from "react-router-dom";
 import SignIn from './SignIn';
 import Login from './Login';
 import FrontPage from './FrontPage';
@@ -10,6 +10,9 @@ import BudgetData from './BudgetData';
 function App() {
   return (
     <Router>
+       <nav>
+          <Link to="/"></Link><Link to="/login"></Link><Link to="/frontpage"></Link><Link to="/dashboard"></Link><Link to="dashboard/prevtransaction"></Link>
+      </nav>
       <Routes>
         <Route path="/" element={<SignIn />} />
         <Route path="/login" element={<Login />} />
