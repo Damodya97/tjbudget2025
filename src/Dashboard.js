@@ -33,12 +33,12 @@ const Dashboard = () => {
     const UpdateUser = async () => {
       const msg = await Updateuser();
       if (msg==='notlog') {
-        navigate('/login');
+        navigate('/tjbudget2025/login');
       } else if (msg==="connectionerror"){
-        navigate('/login');
+        navigate('/tjbudget2025/login');
       } else if(msg.authThis==='usersignedok') {
         if (msg.activebudget==='no') {
-            navigate('/frontpage');
+            navigate('/tjbudget2025/frontpage');
         } else if(msg.activebudget==='yes') {
           setProfile({
             balance: msg.balance,
@@ -59,9 +59,9 @@ const Dashboard = () => {
           }
         }
       }  else if(msg.activebudget==='no') {
-        navigate('/frontpage');
+        navigate('/tjbudget2025/frontpage');
       } else {
-        navigate('/login');
+        navigate('/tjbudget2025/login');
       }
     };
     UpdateUser();
@@ -103,13 +103,13 @@ const Dashboard = () => {
     try {
       const response = await axios.post(`${backendurl}/savemoney`, { databudget },{withCredentials: true});
       if (response.data==='notlog') {
-        navigate('/login');
+        navigate('/tjbudget2025/login');
         setWaitload(false);
       } else if (response.data==='datasaved') {
         window.location.reload();
         setWaitload(false);
       } else {
-        navigate('/login');
+        navigate('/tjbudget2025/login');
         setWaitload(false);
       }
     } catch (error) {
@@ -124,15 +124,15 @@ const Dashboard = () => {
     try {
       const response = await axios.post(`${backendurl}/withdraw`, { items, totalPrice },{withCredentials: true});
       if (response.data==='notlog') {
-        navigate('/login');
+        navigate('/tjbudget2025/login');
         setWaitload(false);
       } else if (response.data==='datasaved') {
-        navigate('prevtransaction');
+        navigate('/tjbudget2025/prevtransaction');
         setWaitload(false);
       } else if (response.data==='noitem') {
         alert("No data added, Please reload");
       }else {
-        navigate('/login');
+        navigate('/tjbudget2025/login');
         setWaitload(false);
       }
     } catch (error) {
@@ -228,8 +228,8 @@ const Dashboard = () => {
       {nuPersons && (<h1 className="dashboard-containerh17">{profile.person2} saved <span className='dashboarspan3'>{profile.person2save}/= Rupees</span> in to the budget.</h1>)}
 
       <div className="dashboard-container4">
-        <button className="go-budget-btn2" onClick={() => navigate(`prevtransaction`)}>See all Transraction</button>
-        <button className="go-budget-btn2" onClick={() => navigate(`/frontpage`)}>New Budget</button>
+        <button className="go-budget-btn2" onClick={() => navigate(`/tjbudget2025/prevtransaction`)}>See all Transraction</button>
+        <button className="go-budget-btn2" onClick={() => navigate(`/tjbudget2025/frontpage`)}>New Budget</button>
       </div>
     </div>
   );

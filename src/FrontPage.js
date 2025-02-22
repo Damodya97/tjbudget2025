@@ -15,15 +15,15 @@ const FrontPage = () => {
       const UpdateUser = async () => {
         const msg = await Updateuser();
         if (msg==='notlog') {
-          navigate('/login');
+          navigate('/tjbudget2025/login');
         } else if (msg==="connectionerror"){
-          navigate('/login');
+          navigate('/tjbudget2025/login');
         } else if(msg.activebudget==='yes') {
           console.log('you are signed in');
         } else if(msg.activebudget==='no') {
           console.log('you are signed in');
         } else {
-          navigate('/login');
+          navigate('/tjbudget2025/login');
         }
       };
       UpdateUser();
@@ -96,7 +96,7 @@ const FrontPage = () => {
             const response = await axios.post(`${backendurl}/startabudget`, { databudget },{withCredentials: true});
             if (response.data==='datasaved') {
               setError('');
-              navigate('/dashboard')
+              navigate('/tjbudget2025/dashboard')
               setWaitload(false);
             } else if (response.data==='connectionerror'){
               setError('connection Error');
@@ -106,7 +106,7 @@ const FrontPage = () => {
               setWaitload(false);
             } else if (response.data==='notlog'){
               setError('Please login first');
-              navigate('/login')
+              navigate('/tjbudget2025/login')
               setWaitload(false);
             } else if (response.data==='montherror'){
               setError('Please check the selected month and year');
@@ -143,10 +143,10 @@ const FrontPage = () => {
       try {
           const response = await axios.post(`${backendurl}/activenew`, { databudget },{withCredentials: true});
           if (response.data==='notlog') {
-            navigate('/login')
+            navigate('/tjbudget2025/login')
           } else if (response.data==='datasaved') {
             setWaitload(false);
-            navigate('/dashboard')
+            navigate('/tjbudget2025/dashboard')
           } else {
             setWaitload(false);
             setError('Error');

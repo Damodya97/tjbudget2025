@@ -21,9 +21,9 @@ const SignIn = () => {
       } else if (msg==="connectionerror"){
         console.log('You are not signed in')
       } else if(msg.activebudget==='yes') {
-        navigate('/dashboard');
+        navigate('/tjbudget2025/dashboard');
       }  else if(msg.activebudget==='no') {
-        navigate('/frontpage');
+        navigate('/tjbudget2025/frontpage');
       }else {
         console.log('You are not signed in')
       }

@@ -17,18 +17,18 @@ const Transaction = () => {
       try {
         const response = await axios.get(`${backendurl}/auth/transaction`, { withCredentials: true });
         if (response.data === "notlog" || response.data === "connectionerror") {
-          navigate("/login");
+          navigate("/tjbudget2025/login");
         } else if (response.data === "noactive") {
-          navigate("/frontpage");
+          navigate("/tjbudget2025/frontpage");
         } else if (response.data) {
           setTransactions(response.data);
           setFilteredTransactions(response.data);
         } else {
-          navigate("/login");
+          navigate("/tjbudget2025/login");
         }
       } catch (error) {
         console.error("Error fetching transactions:", error);
-        navigate("/login");
+        navigate("/tjbudget2025/login");
       }
     };
     fetchTransactions();
