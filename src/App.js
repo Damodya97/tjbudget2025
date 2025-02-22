@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
        <nav>
-          <Link to="/"></Link><Link to="/login"></Link><Link to="/frontpage"></Link><Link to="/tjbudget2025/dashboard"></Link><Link to="/tjbudget2025/dashboard/prevtransaction"></Link>
+          <Link to="/"></Link><Link to="/login"></Link><Link to="/frontpage"></Link><Link to="/dashboard"></Link><Link to="/dashboard/prevtransaction"></Link>
       </nav>
       <Routes>
         <Route path="/" element={<SignIn />} />
