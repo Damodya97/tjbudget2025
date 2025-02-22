@@ -12,10 +12,10 @@ function App() {
     <Router>
       <Routes>
         <Route path="/tjbudget2025" element={<SignIn />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/frontpage" element={<FrontPage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="dashboard/prevtransaction" element={<Transaction />} />
+        <Route path="/tjbudget2025/login" element={<Login />} />
+        <Route path="/tjbudget2025/frontpage" element={<FrontPage />} />
+        <Route path="/tjbudget2025/dashboard" element={<Dashboard />} />
+        <Route path="/tjbudget2025/dashboard/prevtransaction" element={<Transaction />} />
       </Routes>
     </Router>
   );
