@@ -11,10 +11,10 @@ function App() {
   return (
     <Router>
        <nav>
-          <Link to="/tjbudget2025"></Link><Link to="/tjbudget2025/login"></Link><Link to="/tjbudget2025/frontpage"></Link><Link to="/tjbudget2025/dashboard"></Link><Link to="/tjbudget2025/dashboard/prevtransaction"></Link>
+          <Link to="/"></Link><Link to="/tjbudget2025/login"></Link><Link to="/tjbudget2025/frontpage"></Link><Link to="/tjbudget2025/dashboard"></Link><Link to="/tjbudget2025/dashboard/prevtransaction"></Link>
       </nav>
       <Routes>
-        <Route path="/tjbudget2025" element={<SignIn />} />
+        <Route path="/" element={<SignIn />} />
         <Route path="/tjbudget2025/login" element={<Login />} />
         <Route path="/frontpage" element={<FrontPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
