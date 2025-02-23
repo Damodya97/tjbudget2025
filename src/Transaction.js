@@ -64,10 +64,10 @@ const Transaction = () => {
         filtered = filtered.filter((t) => t.action.toLowerCase() === "withdrawed");
         break;
       case "lowToHigh":
-        filtered = [...filtered].sort((a, b) => a.price - b.price);
+        filtered = [...filtered].sort((a, b) => a.balance - b.balance);
         break;
       case "highToLow":
-        filtered = [...filtered].sort((a, b) => b.price - a.price);
+        filtered = [...filtered].sort((a, b) => b.balance - a.balance);
         break;
       default:
         break;
