@@ -26,11 +26,12 @@ const Dashboard = () => {
   const [nuPersons, setnuPerson] = useState(false);
   const [person1Value, setPerson1Value] = useState(0);
   const [person2Value, setPerson2Value] = useState(0);
-   const [waitload, setWaitload] = useState(false);
-    const [waitload1, setWaitload1] = useState(false);
+  const [waitload, setWaitload] = useState(false);
+  const [waitload1, setWaitload1] = useState(false);
 
   useEffect(() => {
     const UpdateUser = async () => {
+      setWaitload(true);
       const msg = await Updateuser();
       if (msg==='notlog') {
         navigate('/login');
@@ -57,6 +58,7 @@ const Dashboard = () => {
           } else {
             setnuPerson(false)
           }
+          setWaitload(false);
         }
       }  else if(msg.activebudget==='no') {
         navigate('/frontpage');

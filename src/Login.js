@@ -11,21 +11,28 @@ const Login = () => {
 
   const navigate = useNavigate();
 
+  const [error, setError] = useState('');
+  const [waitload, setWaitload] = useState(false);
+
  
   useEffect(() => {
   
     const UpdateUser = async () => {
+      setWaitload(true);
       const msg = await Updateuser();
       if (msg==='notlog') {
         console.log('You are not signed in')
+        setWaitload(false);
       } else if (msg==="connectionerror"){
         console.log('You are not signed in')
+        setWaitload(false);
       } else if(msg.activebudget==='yes') {
         navigate('/dashboard');
       }  else if(msg.activebudget==='no') {
         navigate('/frontpage');
       }else {
         console.log('You are not signed in')
+        setWaitload(false);
       }
     };
     UpdateUser();
@@ -35,8 +42,6 @@ const Login = () => {
     username: '',
     password: '',
   });
-  const [error, setError] = useState('');
-  const [waitload, setWaitload] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

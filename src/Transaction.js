@@ -3,6 +3,7 @@ import "./Transaction.css";
 import { backendurl } from "./BackEndUrl";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Waitload from './Waitload';
 
 const Transaction = () => {
   const navigate = useNavigate();
@@ -11,9 +12,12 @@ const Transaction = () => {
   const [filterDate, setFilterDate] = useState("");
   const [sortOrder, setSortOrder] = useState("");
   const [selectedDate, setSelectDate] = useState("");
+  const [waitload, setWaitload] = useState(false);
+  const [waitload1, setWaitload1] = useState(false);
 
   useEffect(() => {
     const fetchTransactions = async () => {
+      setWaitload(true);
       try {
         const response = await axios.get(`${backendurl}/auth/transaction`, { withCredentials: true });
         if (response.data === "notlog" || response.data === "connectionerror") {
@@ -23,6 +27,7 @@ const Transaction = () => {
         } else if (response.data) {
           setTransactions(response.data);
           setFilteredTransactions(response.data);
+          setWaitload(false);
         } else {
           navigate("/login");
         }
@@ -73,6 +78,7 @@ const Transaction = () => {
 
   return (
     <div className="transaction-container">
+       {waitload && (<Waitload waitload1={waitload1}/>)}
       <h2 className="transaction-header">Transaction History</h2>
       
       <div className="filters">
